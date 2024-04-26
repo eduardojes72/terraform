@@ -7,8 +7,6 @@ jobs:
   tf-validate:
     name: Terraform validate and format check
     runs-on: ubuntu-latest
-    env:
-      OS: linux
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -16,8 +14,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_CROSS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_CROSS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
           TF_VAR_owner: ${{ vars.OWNER }}
           TF_VAR_bucket: ${{ secrets.BUCKET_BACKEND }}
@@ -34,11 +32,6 @@ jobs:
     name: Terraform apply
     needs: [tf-validate]
     runs-on: ubuntu-latest
-    env:
-      OS: linux
-      COPS_URL: ${{ secrets.COPS_HOST_PROD }}
-      TF_VAR_registry_host: ${{ secrets.CONTAINER_REGISTRY_HOST }}
-      TF_VAR_image_tag: ${{ needs.release.outputs.new_tag }}
 
     steps:
       - name: Checkout
