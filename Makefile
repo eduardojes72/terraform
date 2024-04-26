@@ -1,5 +1,5 @@
 terraform-init:
-	terraform init
+	terraform init -backend-config=./backend/config.tfvars
 
 terraform-validate:
 	terraform validate
