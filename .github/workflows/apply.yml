@@ -21,7 +21,7 @@ jobs:
           TF_VAR_bucket: ${{ secrets.BUCKET_BACKEND }}
           TF_VAR_key: ${{ secrets.KEY_BUCKET_BACKEND }}
 
-      - name: Setup project
+      - name: Init project
         run: make terraform-init
 
       - name: Validate terraform files
