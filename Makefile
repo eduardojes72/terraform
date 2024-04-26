@@ -14,7 +14,7 @@ terraform-apply:
 	terraform apply
 
 terraform-destroy:
-	terraform destoy
+	terraform destroy
 
 terraform-destroy-single:
 	terraform destoy --target=$(RESOURCE)
