@@ -11,6 +11,8 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
 
   default_tags {
     tags = {
@@ -18,13 +20,4 @@ provider "aws" {
       managed-by = "terraform"
     }
   }
-}
-
-resource "aws_s3_bucket" "my-bucket" {
-  bucket = "my-tf-test-bucket"
-}
-
-variable "team_short" {
-  type    = string
-  default = "aps"
 }

@@ -2,3 +2,11 @@ variable "bucket_name" {
   type    = string
   default = "my-tf-test-bucket"
 }
+
+variable "access_key" {
+  type    = string
+}
+
+variable "secret_key" {
+  type    = string
+}
