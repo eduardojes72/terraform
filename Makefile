@@ -1,5 +1,5 @@
 terraform-init:
-	terraform init -backend-config=./backend/config.tfvars -input=false
+	terraform init -backend-config=./backend/config.tfvars
 
 terraform-validate:
 	terraform validate
@@ -8,7 +8,7 @@ terraform-fmt:
 	terraform fmt
 
 terraform-plan:
-	terraform plan
+	terraform plan -input=false
 
 terraform-apply:
 	terraform apply
