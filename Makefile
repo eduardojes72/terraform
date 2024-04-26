@@ -11,7 +11,7 @@ terraform-plan:
 	terraform plan -input=false
 
 terraform-apply:
-	terraform apply -input=false
+	terraform apply -auto-approve -input=false 
 
 terraform-destroy:
 	terraform destroy -input=false
