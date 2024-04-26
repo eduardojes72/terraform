@@ -11,10 +11,10 @@ terraform-plan:
 	terraform plan -input=false
 
 terraform-apply:
-	terraform apply
+	terraform apply -input=false
 
 terraform-destroy:
-	terraform destroy
+	terraform destroy -input=false
 
 terraform-destroy-single:
 	terraform destoy --target=$(RESOURCE)
