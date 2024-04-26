@@ -14,7 +14,7 @@ terraform-apply:
 	terraform apply -auto-approve -input=false 
 
 terraform-destroy:
-	terraform destroy auto-approve -input=false
+	terraform destroy -auto-approve
 
 terraform-destroy-single:
 	terraform destoy --target=$(RESOURCE)
